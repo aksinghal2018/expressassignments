@@ -21,10 +21,7 @@ app.post('/add_employee', (req, res) => {
     fs.writeFileSync('employee.json', JSON.stringify(data))
     console.log(typeof (req.body))
     //res.send('<h1>Data Added</h1>')
-    popup.alert({
-        content:"data added"
-    })
-    return res.redirect('/')
+   	return res.redirect('/')
 })
 app.get('/employee_data', (req, res) => {
     const data = JSON.parse(fs.readFileSync('employee.json'))
